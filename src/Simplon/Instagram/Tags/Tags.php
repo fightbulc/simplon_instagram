@@ -3,12 +3,17 @@
     namespace Simplon\Instagram\Tags;
 
     use Simplon\Instagram\Core\InstagramConstants;
+    use Simplon\Instagram\Core\InstagramConstructTrait;
     use Simplon\Instagram\Core\InstagramRequests;
     use Simplon\Instagram\Vo\FeedVo;
     use Simplon\Instagram\Vo\TagVo;
 
     class Tags
     {
+        use InstagramConstructTrait;
+
+        // ######################################
+
         /**
          * @param string $accessToken
          * @param string $tagName

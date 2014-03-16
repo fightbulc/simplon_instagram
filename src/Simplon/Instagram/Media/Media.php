@@ -3,6 +3,7 @@
     namespace Simplon\Instagram\Media;
 
     use Simplon\Instagram\Core\InstagramConstants;
+    use Simplon\Instagram\Core\InstagramConstructTrait;
     use Simplon\Instagram\Core\InstagramRequests;
     use Simplon\Instagram\Vo\FeedVo;
     use Simplon\Instagram\Vo\LikesDataVo;
@@ -10,6 +11,10 @@
 
     class Media
     {
+        use InstagramConstructTrait;
+
+        // ######################################
+
         /**
          * @param $accessToken
          * @param string $mediaId
