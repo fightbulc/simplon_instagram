@@ -151,7 +151,7 @@
          * @return array
          * @throws InstagramException
          */
-        protected function _request(\CURL $curl)
+        protected static function _request(\CURL $curl)
         {
             $response = self::_parseResponse($curl->execute());
 
