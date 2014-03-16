@@ -2,7 +2,7 @@
     "name": "simplon/instagram",
     "description": "Instagram API Library",
     "homepage": "https://github.com/fightbulc/simplon_instagram",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "type": "library",
     "keywords": ["instagram", "api", "http"],
     "license": "MIT",
