@@ -3,7 +3,6 @@
     namespace Simplon\Instagram\Users;
 
     use Simplon\Instagram\Core\InstagramConstants;
-    use Simplon\Instagram\Core\InstagramConstructTrait;
     use Simplon\Instagram\Core\InstagramRequests;
     use Simplon\Instagram\Vo\FeedVo;
     use Simplon\Instagram\Vo\UserRelationshipVo;
@@ -12,10 +11,6 @@
 
     class Users
     {
-        use InstagramConstructTrait;
-
-        // ######################################
-
         /**
          * @param $accessToken
          * @param $userId
@@ -167,17 +162,18 @@
         // ######################################
 
         /**
+         * @param $accessToken
          * @param $name
          * @param int $maxItems
          *
          * @return UserShortVo[]
          */
-        public function searchByName($name, $maxItems = 20)
+        public function searchByName($accessToken, $name, $maxItems = 20)
         {
             $params = [
-                'client_id' => $this->_getAuthClientId(),
-                'q'         => $name,
-                'count'     => $maxItems,
+                'access_token' => $accessToken,
+                'q'            => $name,
+                'count'        => $maxItems,
             ];
 
             $response = InstagramRequests::get(InstagramConstants::ENDPOINT_USER_SEARCH_BY_NAME, $params);
