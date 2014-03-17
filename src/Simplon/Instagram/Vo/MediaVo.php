@@ -65,11 +65,11 @@
         // ######################################
 
         /**
-         * @return string
+         * @return array
          */
         public function getCaptionData()
         {
-            return (string)$this->_captionData;
+            return (array)$this->_captionData;
         }
 
         // ######################################
@@ -81,7 +81,12 @@
         {
             if (!$this->_captionVo)
             {
-                $this->_captionVo = (new CaptionVo())->setData($this->getCaptionData());
+                $data = $this->getCaptionData();
+
+                if (!empty($data))
+                {
+                    $this->_captionVo = (new CaptionVo())->setData($data);
+                }
             }
 
             return $this->_captionVo;
@@ -467,6 +472,16 @@
         public function getUserData()
         {
             return (array)$this->_userData;
+        }
+
+        // ######################################
+
+        /**
+         * @return UserVo
+         */
+        public function getUser()
+        {
+            return (new UserVo())->setData($this->getUserData());
         }
 
         // ######################################
